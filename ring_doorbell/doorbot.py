@@ -199,7 +199,7 @@ class RingDoorBell(RingGeneric):
         """
         try:
             if (dtype := self._get_chime_setting("type")) is not None:
-                return DOORBELL_EXISTING_TYPE[dtype]
+                return DOORBELL_EXISTING_TYPE.get(dtype)
         except AttributeError:
             return None
         else:
